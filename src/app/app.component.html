@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Adiciona uma margem de 100px no topo -->
+    <header style="margin-top: 100px"></header> 
+
+    <section id="main">
+        <!-- Titulo heading 3-->
+        <h3>Lista de alunos</h3>
+        <div class="container">
+            <!-- Título heading 1 -->
+            <h1>Agenda</h1>
+            <!-- Utilizo as classes do bootstrap para grid de 12 colunas -->
+            <div class="col-md-12">
+                <!-- Table com estilização do bootstrap -->
+                <table class="table table-striped table-dark">
+                    <thead>
+                        <!-- Cabeçalho da tabela -->
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">RU</th>
+                            <th scope="col">Curso</th>
+                            <th scope="col">Data</th>
+                        </tr>
+                    </thead>
+                    <!-- Corpo da tabela -->
+                    <tbody>
+                        <!-- Laço de repetição ngFor do angular, faz o laço na lista de estudantes -->
+                        <!-- Para cada estudante, mostra os dados do mesmo. -->
+                        <tr *ngFor="let item of students; let i = index" [attr.data-index]="i">
+                            <th scope="row">{{item.name}}</th>
+                            <td>{{item.ru}}</td>
+                            <td>{{item.class}}</td>
+                            <td>{{item.date}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
+<router-outlet></router-outlet>
